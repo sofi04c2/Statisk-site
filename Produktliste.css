@@ -1,0 +1,98 @@
+
+
+.productlist main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+ 
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.productlist article > * {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.productlist main h2 {
+    grid-column: 1/-1;
+}
+
+ul a{
+    display: flex;
+    list-style: none;
+    font-family: "cinzeldecoration1";
+    justify-content: space-around;
+    padding: 20px ;
+    border-radius: 5px;
+    justify-content: space-around
+  }
+
+  .mainNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+
+header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+    
+header.mainNav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+body{
+background-color: rgba(238, 234, 228, 0.83);
+}
+
+h3 {
+    font-size: 1.953rem;
+    letter-spacing: -0.02rem;
+    line-height: 1.2;
+}
+
+p{
+    display: block;
+   
+}
+
+.smallProduct{
+    padding:10%;
+}
+
+.discounted p:last-child {
+    background: red;
+    padding: 0.2rem;
+}
+
+.productlist article.onSale .discounted {
+    display: flex;
+    justify-content: space-between;
+}
+
+.productlist article.soldOut img {
+    opacity: 0.5;
+}
+
+.productlist article > * {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.productlist article.soldOut::before {
+    content: "Sold Out";
+    position: absolute;
+    background-color: black;
+    color:aliceblue;
+    padding: 1rem;
+}
