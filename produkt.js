@@ -18,9 +18,13 @@
 // }
 
 // hentData();
+const urlParams = new URLseachParams(window.location.seach);
+
+const id = urlParams.get("id");
+const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
 
 async function getProduct() {
-  const response = await fetch("https://kea-alt-del.dk/t7/api/products/1529");
+  const response = await fetch("`https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`");
   const data = await response.json();
   console.log(data);
   showProduct(data);

@@ -1,28 +1,29 @@
-// const filNavn = "https://kea-alt-del.dk/t7/api/products";
+const filNavn = "https://kea-alt-del.dk/t7/api/products";
 
-// function hentData(navn) {
-//   fetch(navn)
-//     .then((respons) => respons.json())
-//     .then(visData);
-// }
+function hentData(navn) {
+  fetch(navn)
+    .then((respons) => respons.json())
+    .then(visData);
+}
 
-// function visData(json) {
-//   const temp = document.querySelector("template").content;
-//   const beholder = document.querySelector("main");
-//   json.forEach((tøj) => {
-//     const klon = temp.cloneNode(true);
-//     klon.querySelector("").textContent = produkt.price;
-//     klon.querySelector("h2").textContent = produkt.str;
-//     klon.querySelector("h3").textContent = tøj.farve;
-//     klon.querySelector("h4").textContent = tøj.model;
-//     beholder.appendChild(klon);
-//   });
-// }
+function visData(json) {
+  const temp = document.querySelector("template").content;
+  const beholder = document.querySelector("main");
+  json.forEach((tøj) => {
+    const klon = temp.cloneNode(true);
+    klon.querySelector("").textContent = produkt.price;
+    klon.querySelector("h2").textContent = produkt.str;
+    klon.querySelector("h3").textContent = tøj.farve;
+    klon.querySelector("h4").textContent = tøj.model;
+    beholder.appendChild(klon);
+    data.forEach(getData);
+  });
+}
 
-// hentData(filNavn);
+hentData(filNavn);
 
 async function getData() {
-  const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=15");
+  const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=10");
   const data = await response.json();
   //   console.log(data);
   //2. loppe //3. for hver
@@ -44,7 +45,9 @@ function showProduct(product) {
   }
   if (product.discount) {
     copy.querySelector("article").classList.add("onSale");
+    // copy.querySelector(".nowprice").textContent = `${math.round(object.price - object.price * (object.discount / 100))} DKK`;
   }
+  copy.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
   //8. appende
   document.querySelector("main").appendChild(copy);
 }
