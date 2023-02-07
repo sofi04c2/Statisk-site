@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Produktliste.css" />
     <title>FashinRus</title>
 </head>
+<div class = "grid";></div>
     <header>
       <a href="index.html">
         <h1>Fashion<span>R</span>Us</h1>
@@ -22,8 +23,7 @@
        <body class="productlist">
        <main>
          <h2>Nike</h2>
-
-
+         <template id ="smallProductTemplate">
          <article class="smallProduct">
            <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
              alt="Sahara Team India Fanwear Round Neck Jersey" />
@@ -33,8 +33,7 @@
            </div>
            <a href="Produkt.html">Read More</a>
          </article>
-
-
+        </template>
          <article class="smallProduct onSale">
            <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="Blue T20" />
            <h3>Blue T20 Indian Cricket Jersey</h3>
@@ -46,8 +45,6 @@
            </div>
            <a href="Produkt.html">Read More</a>
          </article>
-
-
          <article class="smallProduct soldOut">
            <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Blue T20 Indian Cricket Jersey" />
            <h3>Blue T20 Indian Cricket Jersey</h3>
@@ -56,8 +53,6 @@
            </div>
            <a href="Produkt.html">Read More</a>
          </article>
-
-
          <article class="smallProduct soldOut onSale">
            <img src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="Blue T20 Indian" />
            <h3>Blue T20 Indian Cricket Jersey</h3>
@@ -69,8 +64,6 @@
            </div>
            <a href="Produkt.html">Read More</a>
          </article>
-
-
          <article class="smallProduct">
            <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="Blue T20 Indian Cricket Jersey" />
            <h3>Blue T20 Indian Cricket Jersey</h3>
@@ -80,5 +73,17 @@
            <a href="Produkt.html">Read More</a>
          </article>
        </main>  
+       <template>
+       <article class="smallProduct">
+           <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
+             alt="Sahara Team India Fanwear Round Neck Jersey" />
+           <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
+           <p class="subtle">Tshirts | Nike</p>
+             <p class= "price">DKK 1560,-</p>
+           </div>
+           <a href="Produkt.html">Read More</a>
+         </article>
+        </template>
+       <script src="produktliste.js"></script>
 </body>
 </html>
