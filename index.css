@@ -1,7 +1,7 @@
 body {
   padding: 0;
   background-color: rgb(65, 97, 225);
-  background-image: url(./brugervenligt.jpg);
+  background-image: url(./brugervenligt.webp);
   background-size: cover;
 }
 
@@ -29,9 +29,18 @@ span {
   transform: scaleX(-1) translateX(-0.2rem);
   color: rgb(39, 53, 153);
 }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
 @media (max-width: 601px) {
-  .grid2 {
+  .grid {
     grid-template-columns: 1fr;
+  }
+  ul a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.4rem;
   }
 }

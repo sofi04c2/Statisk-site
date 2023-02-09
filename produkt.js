@@ -1,39 +1,23 @@
-// const id = 1541;
-// const url = `https://kea-alt-del.dk/t7/api/products/1532`;
-// const imagePath = `https://kea-alt-del.dk/t7/images/webp/640/1565.webp`;
-
-// function hentData() {
-//   fetch(url)
-//     .then((klar) => klar.json())
-//     .then(visProdukt);
-// }
-
-// function visProdukt(produkt) {
-//   console.log(produkt);
-//   document.querySelector("#model").textContent = produkt.productdisplayname;
-//   document.querySelector("img").src = imagePath;
-//   document.querySelector("img").alt = produkt.productdisplayname;
-//   document.querySelector(".farve").textContent = produkt.basecolor;
-//   document.querySelector("brand").textContent = produkt.brandname;
-// }
-
-// hentData();
-const urlParams = new URLseachParams(window.location.seach);
-
+const urlParams = new URLSearchParams(window.location.seach);
+console.log(urlParams);
 const id = urlParams.get("id");
 const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
+const imagePath = `https://kea-alt-del.dk/t7/images/webp/640/${id}.webp`;
 
-async function getProduct() {
-  const response = await fetch("`https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`");
-  const data = await response.json();
-  console.log(data);
-  showProduct(data);
+function hentData() {
+  fetch(url)
+    .then((res) => res.json())
+    .then(showProdukt);
 }
 
-function showProduct(product) {
-  document.querySelector(".info h3").textContent = product.productdisplayname;
-  document.querySelector(".info .brand").textContent = product.brand;
-  document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+function showProdukt(produkt) {
+  document.querySelector(".model").textContent = produkt.productdisplayname;
+  document.querySelector(".id").textContent = produkt.id;
+  document.querySelector(".price").textContent = produkt.price;
+  document.querySelector(".colour").textContent = produkt.basecolour;
+  document.querySelector(".category").textContent = produkt.category;
+  document.querySelector(".gender").textContent = produkt.gender;
+  document.querySelector(".img").src = imagePath;
 }
 
-getProduct();
+hentData();
